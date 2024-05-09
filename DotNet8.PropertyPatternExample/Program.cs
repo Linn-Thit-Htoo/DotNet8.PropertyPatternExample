@@ -10,6 +10,8 @@ public class Program
         {
             EditProduct();
         }
+
+        //Console.WriteLine(nameof(EnumGender.Male));
     }
 
     public static void EditProduct(Product? product = null)
@@ -25,7 +27,7 @@ public class Program
 
 public record Product(long ProductId, string ProductName, int Price);
 
-public enum EnumUserRoles
+public enum EnumGender
 {
     None,
     Male,
