@@ -8,23 +8,26 @@ public class Program
 
         if (product is { Price: > 1000, ProductName: "Product" })
         {
-
+            EditProduct();
         }
+    }
+
+    public static void EditProduct(Product? product = null)
+    {
+        if (product is { ProductId: 0 }) // product is not null and product id is not 0
+        {
+            return;
+        }
+
+        throw new Exception("Product ID cannot be empty.");
     }
 }
 
-//public class Product
-//{
-//    public Product(long productId, string productName, int price)
-//    {
-//        ProductId = productId;
-//        ProductName = productName;
-//        Price = price;
-//    }
-
-//    public long ProductId { get; set; }
-//    public string ProductName { get; set; } = null!;
-//    public int Price { get; set; }
-//}
-
 public record Product(long ProductId, string ProductName, int Price);
+
+public enum EnumUserRoles
+{
+    None,
+    Male,
+    Female
+}
